@@ -39,7 +39,7 @@ Make sure these sequence alignment softwares have been installed in your environ
    - IsoSVM::GetFeatures
    - IsoSVM::SVMLight
 
-   All theses modules reside in the corresponding subdirectories of the IsoSVM directory. Adjust the corresponding path in both IsoSVM scripts "isosvm.pl" and "isosvm_wrapper.pl" in line 7. for example, change the line 
+   All theses modules reside in the corresponding subdirectories of the IsoSVM directory. Adjust the corresponding path in both IsoSVM scripts "isosvm.pl" line 7 and "isosvm_wrapper.pl" line 9. In detail, change the line 
 
    `use lib "<put IsoSVM module installation path here>"`;
 
