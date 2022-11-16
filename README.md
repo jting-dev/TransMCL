@@ -26,10 +26,10 @@ Make sure these sequence alignment softwares have been installed in your environ
 
 - **install and configure the IsoSVM**
 
-1. The main Perl scripts invoked in the package is 'isosvm.pl' and 'isosvm_wrapper.pl' resided in isoSVM home directory. Add the path of isoSVM directory to your $PATH so that the main Perl scripts can be automatically when run from a shell or invoked in package. (for example, if you put both IsoSVM scripts in "/home/user/bin/isosvm/" you can add that path to $PATH by:
+1. unzip isoSVM.zip. The main Perl scripts invoked in the packages, 'isosvm.pl' and 'isosvm_wrapper.pl' are resided in isoSVM directory. Add the path of isoSVM directory to your $PATH so that the main Perl scripts can be automatically executed when run from a shell or invoked in package. (for example, if you put both IsoSVM scripts in "/home/user/bin/isosvm/" you can add that path to $PATH by:
    `export PATH="$PATH:/home/user/bin/isosvm"  # for users of BASH`
 
-2. Add the path of corresponding subdirectory IsoSVM to your $PATH so that the Perl scripts "svm_learn.pl" and "svm_classify.pl" can be automatically when run from a shell or invoked in package.
+2. Add the path of corresponding subdirectory IsoSVM, which resided in isoSVM directory, to your $PATH so that the Perl scripts "svm_learn.pl" and "svm_classify.pl" can be automatically executed when run from a shell or invoked in package.
 
 3. Configure the IsoSVM modules. the isoSVM scripts need a couple of modules:
 
@@ -39,7 +39,7 @@ Make sure these sequence alignment softwares have been installed in your environ
    - IsoSVM::GetFeatures
    - IsoSVM::SVMLight
 
-   All theses modules reside in the corresponding subdirectories of the IsoSVM home directory. Adjust the corresponding path in both IsoSVM scripts "isosvm.pl" and "isosvm_wrapper.pl" in line 7. for example, change the line 
+   All theses modules reside in the corresponding subdirectories of the IsoSVM directory. Adjust the corresponding path in both IsoSVM scripts "isosvm.pl" and "isosvm_wrapper.pl" in line 7. for example, change the line 
 
    `use lib "<put IsoSVM module installation path here>"`;
 
