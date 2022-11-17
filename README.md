@@ -1,5 +1,3 @@
-
-
 # TransMCL
 
 TransMCL is a tool which enables reference genome-free reconstruction of full-length transcriptome invovled in phylogenetic reasearch. It utilizes the genome from the closely relative species to guide the assembly of the transcripts derived from Trinity. Then it further processes the assembled transcripts to eliminate the redudant transcripts by invoking IsoSVM tool to automated separate the isoforms from paralogs based on alignment pattern of protein sequences.
@@ -26,10 +24,12 @@ Make sure these sequence alignment softwares have been installed in your environ
 
 - **install and configure the IsoSVM**
 
-1. unzip isoSVM.zip. The main Perl scripts invoked in the packages, 'isosvm.pl' and 'isosvm_wrapper.pl' are resided in isoSVM directory. Add the path of isoSVM directory to your $PATH so that the main Perl scripts can be automatically executed when run from a shell or invoked in package. (for example, if you put both IsoSVM scripts in "/home/user/bin/isosvm/" you can add that path to $PATH by:
+1. download and unzip isoSVM.zip. The main Perl scripts invoked in the packages, 'isosvm.pl' and 'isosvm_wrapper.pl' are resided in this directory. Add the path of isoSVM directory to your $PATH so that the main Perl scripts can be automatically executed when run from a shell or invoked in package. (for example, if you put both IsoSVM scripts in "/home/user/bin/isosvm/" you can add that path to $PATH by:
    `export PATH="$PATH:/home/user/bin/isosvm"  # for users of BASH`
 
-2. Add the path of corresponding subdirectory IsoSVM, which resided in isoSVM directory, to your $PATH so that the Perl scripts "svm_learn.pl" and "svm_classify.pl" can be automatically executed when run from a shell or invoked in package.
+2. Add the path of corresponding subdirectory IsoSVM, which resided in isoSVM directory, to your $PATH so that the Perl scripts "svm_learn.pl" and "svm_classify.pl" can be automatically executed when run from a shell or invoked in package. You can add that path to $PATH by:
+
+   `export path="PATH:/home/user/bin/isosvm/IsoSVM"  #for users of BASH`
 
 3. Configure the IsoSVM modules. the isoSVM scripts need a couple of modules:
 
@@ -39,7 +39,7 @@ Make sure these sequence alignment softwares have been installed in your environ
    - IsoSVM::GetFeatures
    - IsoSVM::SVMLight
 
-   All theses modules reside in the corresponding subdirectories of the IsoSVM directory. Adjust the corresponding path in both IsoSVM scripts "isosvm.pl" line 7 and "isosvm_wrapper.pl" line 9. In detail, change the line 
+   All theses modules reside in the subdirectories IFG and IsoSVM. Adjust the corresponding path in both IsoSVM scripts "**isosvm.pl**" **line 7** and **"isosvm_wrapper.pl"** **line 9**. In detail, change the line 
 
    `use lib "<put IsoSVM module installation path here>"`;
 
@@ -47,11 +47,13 @@ Make sure these sequence alignment softwares have been installed in your environ
 
    `use lib "/home/usr/bin/isosvm"`;
 
-4. Install the SVM model. If you like it to be found automatically by IsoSVM, create a directory named ".isosvm" in **your home directory** and copy the model "isosvm.model" there. IsoSVM will also find the model automatically if "isosvm.pl" is called from the same directory where ".isosvm" is located.
+4. Install the SVM model. If you like it to be found automatically by IsoSVM, create a directory named **".isosvm"** in **your home directory** and copy the model "isosvm.model" there. IsoSVM will also find the model automatically if "isosvm.pl" is called from the same directory where ".isosvm" is located.
 
 - **install TransMCL package**
 
 `pip3 install TransMCL  ` 
+
+​		or you can download "TransMCL.tar.gz" from this website and unzip it. Then add it to your python site-packages.
 
 ## Usage 
 
@@ -97,9 +99,12 @@ Here are the detailed description of this **neccessary parameters**:
 | --length        | input gene length file          | the gene length file in the format "gene_name	gene_lenth" |
 | --species       | input gene species file         | the gene species file in the format "gene_name	species"   |
 | --transcriptome | input transcriptome list file   | the transcriptome species name list                          |
+| --MSA           | input MSA tool                  | assign the multi-sequence alignment tool (Mafft/Muscle. default: Mafft) |
 | --tree          | input tree file (.nwk)          | the phylogenetic tree file of selected species (.nwk format) |
 | --threads       | threads that to be used         | set number of threads (default:1)                            |
 | --out           | Output directory name           | set the output directory name                                |
+
+
 
 
 
