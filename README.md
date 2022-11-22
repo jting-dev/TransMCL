@@ -246,7 +246,7 @@ This directory contain protein sequences proceessed by first-round isoSVM tool t
 
 - Isosvm_2st
 
-This directory contain final protein sequences processed by second-round isoSVM tool filter isoforms. The "clean_fasta.txt" resided in "Ath_trinity" and "Esa_trinity" are the full-length transcriptome we want. 
+This directory contain final protein sequences processed by second-round isoSVM tool filter isoforms. The "clean_fasta.txt" resided in "Ath_trinity" and "Esa_trinity" are the full-length non-redundant transcriptome we want. 
 
 
 
