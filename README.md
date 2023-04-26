@@ -110,12 +110,12 @@ Here are the detailed description of this **neccessary parameters**:
 
 ## Testing
 
-The directory test_data contain the necessary input datasets to help you test TransMCL. The file as following:
+The directory test_dataset stored in https://sourceforge.net/projects/transmcl1/files/test_dataset/ contain the necessary input datasets to help you test TransMCL. The file as following:
 
 -  phymcl.input.tree
 
 ```
-(Cpapaya,((Esa_trinity,(Brapa,Tparvula)),(Bstricta,((Cgrandiflora,Crubella),(Ath_trinity,(Alyrata,Ahalleri))))));
+(((Ath_trinity,Alyrata),Ahalleri),(Esa_trinity,Brapa));
 ```
 
 This is the phylogenetic tree file containing all the selected species **in Newick Format**. Among which the A.thaliana and E.salsugineum are transcriptome derived by Trinity, the rest are genome. The name of A.thaliana and E.salsugineum must be **labeled with suffix** such as "Ath_trinity" and "Esa_trinity".  
