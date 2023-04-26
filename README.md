@@ -150,40 +150,55 @@ This file contains all the protein sequences of transcriptome for A.thaliana and
 - all_sample2fa.list
 
 ```
-evm.model.supercontig_0.1       Cpapaya
-.......
+
 Ath_TRINITY_DN10000_c0_g1_i1.p1 Ath_trinity
+.......
+AL706U10010.t1  Alyrata
+.......
+Araha.32801s0005.1.p    Ahalleri
 .......
 Esa_TRINITY_DN0_c0_g1_i1.p1     Esa_trinity
 .......
+Brara.K01534.1.p        Brapa
+.......
 ```
 
-This file contains two columns: the gene id and the species to which it belongs.
+This file contains two columns: the gene id and the species to which it belongs. The two elements are separated by tab.
 
 
 
 - all_sample.faa.length
 
 ```
-evm.model.supercontig_0.1       62
-......
 Ath_TRINITY_DN10000_c0_g1_i1.p1 472
-......
+.......
+AL706U10010.t1  501
+.......
+Araha.32801s0005.1.p    226
+.......
 Esa_TRINITY_DN0_c0_g1_i1.p1     635
-......
+.......
+Brara.K01534.1.p        824
+.......
 ```
 
-This file contains two columns: the gene id and the length of the protein sequence.
+This file contains two columns: the gene id and the length of the protein sequence. The two elements are separated by tab.
 
 
 
 - all_blastp.out 
 
 ```
-evm.model.supercontig_0.1       evm.model.supercontig_0.1       100.0   62      0       0       1       62      1       62      1.7e-27 117.9
+Ath_TRINITY_DN10000_c0_g1_i1.p1 Ath_TRINITY_DN10000_c0_g1_i1.p1 100.0   472     0       0       1       472     1       472
+     1.7e-264        908.7
 .......
-Ath_TRINITY_DN10000_c0_g1_i1.p1 evm.model.supercontig_676.2     60.3    468     103     3       4       470     89      474     3.3e-147        518.5
+Ath_TRINITY_DN10000_c0_g1_i1.p1 Araha.0709s0003.1.p     96.4    418     15      0       55      472     1       418     2.8e-227        784.6
 .......
+Esa_TRINITY_DN0_c0_g1_i1.p1     Esa_TRINITY_DN0_c0_g1_i1.p1     100.0   635     0       0       1       635     1       635     0.0e+00 1293.9
+.......
+Esa_TRINITY_DN0_c0_g1_i1.p1     Araha.10415s0003.1.p    82.9    645     93      5       1       635     83      720     0.0e+00 1080.1
+.......
+
 ```
 
 This is all-to-all protein blast file outputted by diamond. The proteins from all the species (genome/transcriptome) are included.
@@ -193,11 +208,13 @@ This is all-to-all protein blast file outputted by diamond. The proteins from al
 - allmcl.out.info
 
 ```
-315052  34641275
-1       evm.model.supercontig_0.1
-2       evm.model.supercontig_40.87
-3       evm.model.supercontig_109.2
-4       evm.model.supercontig_10.175
+180698  10723473
+1       Ath_TRINITY_DN10000_c0_g1_i1.p1
+2       Ath_TRINITY_DN10000_c0_g1_i2.p1
+3       Ath_TRINITY_DN10000_c0_g2_i1.p1
+4       Ath_TRINITY_DN11457_c0_g2_i1.p1
+5       Ath_TRINITY_DN11457_c0_g1_i6.p1
+.......
 ```
 
 This first line of this file contains total number of all genes and total lines of blast file (all_blastp.out), and the below lines set up an id for each gene simply by numbers.
@@ -207,22 +224,23 @@ This first line of this file contains total number of all genes and total lines 
 - allmcl.out.abc
 
 ```
-1       1       117.9
-1       2       57.4
-1       3       47.0
-1       4       44.7
-1       5       44.3
-1       6       43.9
-1       7       41.6
-1       8       40.8
-2       1       56.6
-2       2       391.7
+1       1       908.7
+1       2       905.6
+1       3       461.8
+1       4       144.4
+1       5       143.3
+.......
+2       1       905.2
+2       2       907.5
+2       3       461.8
+2       4       146.7
+2       5       144.4
 .......
 ```
 
 This file contains three columns: the query gene id, the subject gene id, and the bitscore value of this two gene. 
 
-*NOTE: This file and the above allmcl.out.info can be automaticly output by PhyloMCL if you have already installed this software.*
+*NOTE: This file and the above allmcl.out.info can be output by **PhyloMCL** with parameter as **"-super -develper"** if you have already installed this software.*
 
 
 
