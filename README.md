@@ -247,7 +247,7 @@ This file contains three columns: the query gene id, the subject gene id, and th
 You can run this command to help test TransMCL.
 
 ```
-$ python3 -m TransMCL --abc allmcl.out.abc --info allmcl.out.info --alignment all_blastp.out --fasta info_trinity.fa --group allmcl.out.OGs.group --length all_sample.faa.length --species all_sample2fa.list --transcriptome info_tra.txt --tree phymcl.input.tree --threads 6 --out trans
+python3 -m TransMCL --abc allmcl.out.abc --info allmcl.out.info --alignment all_blastp.out --fasta info_trinity.fa --group allmcl.out.OGs.group --length all_sample.faa.length --species all_sample2fa.list --transcriptome info_tra.txt --tree phymcl.input.tree --threads 6 --out trans_output
 ```
 
 If successful, you can obtain an output directory named as "trans_output".
