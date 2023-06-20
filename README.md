@@ -1,6 +1,6 @@
 # TransMCL
 
-TransMCL is a tool which enables reference genome-free reconstruction of full-length transcriptome invovled in phylogenetic reasearch. It utilizes the genome from the closely relative species to guide the assembly of the transcripts derived from Trinity. Then it further processes the assembled transcripts to eliminate the redudant transcripts by invoking IsoSVM tool to automated separate the isoforms from paralogs based on alignment pattern of protein sequences.
+TransMCL is a tool which enables reconstruction of full-length transcriptome invovled in phylogenetic reasearch. It utilizes the genome from the closely relative species to guide the assembly of the transcripts derived from Trinity. Then it further processes the assembled transcripts to eliminate the redudant transcripts by invoking IsoSVM tool to automated separate the isoforms from paralogs based on alignment pattern of protein sequences.
 
 
 
@@ -39,7 +39,7 @@ Make sure these sequence alignment softwares have been installed in your environ
    - IsoSVM::GetFeatures
    - IsoSVM::SVMLight
 
-   All theses modules reside in the subdirectories IFG and IsoSVM. Adjust the corresponding path in both IsoSVM scripts "**isosvm.pl**" **line 7** and **"isosvm_wrapper.pl"** **line 9**. In detail, change the line 
+   All theses modules reside in the subdirectories IFG and IsoSVM. Adjust the corresponding path in both IsoSVM scripts "**isosvm.pl**" **line 9** and **"isosvm_wrapper.pl"** **line 7**. In detail, change the line 
 
    `use lib "<put IsoSVM module installation path here>"`;
 
